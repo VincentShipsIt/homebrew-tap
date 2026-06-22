@@ -1,0 +1,56 @@
+name: CI
+
+# Validates the formulae/casks in this tap. The MacSweep formula moved here from
+# the macsweep repo, so its release gate (sha256 match + build-from-source
+# install/test) now lives in this workflow rather than that repo's CI.
+
+on:
+  push:
+    paths:
+      - "Formula/**"
+      - ".github/workflows/**"
+  pull_request:
+    paths:
+      - "Formula/**"
+      - ".github/workflows/**"
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  macsweep-formula:
+    name: MacSweep formula (build from source)
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      # The formula pins `url` + `sha256`. Download the exact tarball the url
+      # points at and assert its checksum equals the pinned one — catching the
+      # "bumped the url but forgot the sha256" mistake before anyone can
+      # `brew install` a formula that wouldn't verify.
+      - name: Validate formula sha256 matches its pinned tarball
+        run: |
+          set -euo pipefail
+          formula="Formula/macsweep.rb"
+          url=$(grep -m1 -E '^\s*url ' "$formula" | sed -E 's/.*"([^"]+)".*/\1/')
+          pinned=$(grep -m1 -E '^\s*sha256 ' "$formula" | sed -E 's/.*"([^"]+)".*/\1/')
+          echo "Formula url:    $url"
+          echo "Formula sha256: $pinned"
+          curl -fsSL "$url" -o /tmp/macsweep-src.tar.gz
+          actual=$(shasum -a 256 /tmp/macsweep-src.tar.gz | awk '{print $1}')
+          echo "Tarball sha256: $actual"
+          if [ "$actual" != "$pinned" ]; then
+            echo "::error::Formula sha256 ($pinned) does not match tarball ($actual). Update Formula/macsweep.rb."
+            exit 1
+          fi
+
+      # Install exactly as a user would, building from source, then run the
+      # formula's own `test do` block.
+      - name: Install + test formula (build from source)
+        run: |
+          set -euo pipefail
+          brew install --build-from-source --formula ./Formula/macsweep.rb
+          brew test --formula ./Formula/macsweep.rb
+          macsweep version
