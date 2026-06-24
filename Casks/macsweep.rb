@@ -1,6 +1,6 @@
 cask "macsweep" do
-  version "1.0.5"
-  sha256 "9af348b70305786bdb3f8ffb7fd3fdceb6e16916c441a9ebb7635218d224563a"
+  version "1.0.6"
+  sha256 "3b3f474fc06fd93f5a52d69adc4e5df7b36b20abb19315d9eb6cd3ddbd281698"
 
   url "https://github.com/VincentShipsIt/macsweep/releases/download/v#{version}/macsweep-v#{version}-macos.zip",
       verified: "github.com/VincentShipsIt/macsweep/"
