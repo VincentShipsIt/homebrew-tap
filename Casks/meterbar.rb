@@ -2,8 +2,7 @@ cask "meterbar" do
   version "1.6.1"
   sha256 "104487d27d969cd96380bd6854673b834bb9715a2dbe96c7af1731762a1156fd"
 
-  url "https://github.com/VincentShipsIt/meterbar.app/releases/download/v#{version}/MeterBar-v#{version}.zip",
-      verified: "github.com/VincentShipsIt/meterbar.app/"
+  url "https://github.com/VincentShipsIt/meterbar.app/releases/download/v#{version}/MeterBar-v#{version}.zip"
   name "MeterBar"
   desc "Track AI coding assistant usage limits from the menu bar"
   homepage "https://github.com/VincentShipsIt/meterbar.app"
