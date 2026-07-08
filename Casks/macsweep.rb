@@ -9,7 +9,7 @@ cask "macsweep" do
   homepage "https://github.com/VincentShipsIt/macsweep"
 
   depends_on formula: "vincentshipsit/tap/macsweep"
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "MacSweep.app"
 end
