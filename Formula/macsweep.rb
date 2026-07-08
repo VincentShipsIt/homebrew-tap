@@ -8,8 +8,8 @@
 # Install (this formula lives in the VincentShipsIt/homebrew-tap repo):
 #   brew tap vincentshipsit/tap
 #   brew trust --formula vincentshipsit/tap/macsweep # required on recent Homebrew (3rd-party tap)
-#   brew install macsweep                            # pinned stable release
-#   brew install --HEAD macsweep                     # bleeding-edge from master
+#   brew install --formula vincentshipsit/tap/macsweep
+#   brew install --formula --HEAD vincentshipsit/tap/macsweep
 #
 # Recent Homebrew gates non-official taps behind a trust check; without the
 # `brew trust` line above the install aborts with "tap trust is required".
