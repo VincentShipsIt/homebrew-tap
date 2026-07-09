@@ -2,7 +2,8 @@ cask "macsweep" do
   version "1.0.8"
   sha256 "b723f3976d39bab2d5cb4a692965497399897f46d23ed9ccf000899975c994b7"
 
-  url "https://github.com/VincentShipsIt/macsweep/releases/download/v#{version}/macsweep-v#{version}-macos.zip"
+  url "https://github.com/VincentShipsIt/macsweep/releases/download/v#{version}/macsweep-v#{version}-macos.zip",
+      verified: "github.com/VincentShipsIt/macsweep/"
   name "MacSweep"
   desc "Native system cleaner"
   homepage "https://macsweep.dev/"
