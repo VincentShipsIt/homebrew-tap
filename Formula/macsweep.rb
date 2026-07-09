@@ -1,9 +1,9 @@
 # MacSweep — CLI-first macOS system cleaner.
 #
-# Distribution strategy (no Apple Developer account / code signing yet):
-# build the `macsweep` CLI from source via SwiftPM. The Swift package lives in
-# the `MacSweep/` subdirectory of the source repo, so the install block builds
-# from there.
+# Distribution strategy: build the `macsweep` CLI from source via SwiftPM.
+# The separately published cask installs the Developer ID-signed and notarized
+# MacSweep app. The Swift package lives in the `MacSweep/` subdirectory of the
+# source repo, so the install block builds from there.
 #
 # Install (this formula lives in the VincentShipsIt/homebrew-tap repo):
 #   brew tap vincentshipsit/tap
@@ -21,7 +21,7 @@
 # the url, so no explicit `version` line is needed.
 class Macsweep < Formula
   desc "CLI-first macOS system cleaner (scan, clean, maintenance, malware, brew)"
-  homepage "https://github.com/VincentShipsIt/macsweep"
+  homepage "https://macsweep.dev/"
   url "https://github.com/VincentShipsIt/macsweep/archive/refs/tags/v1.0.8.tar.gz"
   sha256 "7ee341506f788083d2755ee37af49c21cb65c3bed547f0390c5e81c98f99c80c"
   license "MIT"

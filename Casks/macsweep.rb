@@ -4,8 +4,8 @@ cask "macsweep" do
 
   url "https://github.com/VincentShipsIt/macsweep/releases/download/v#{version}/macsweep-v#{version}-macos.zip"
   name "MacSweep"
-  desc "Native macOS system cleaner"
-  homepage "https://github.com/VincentShipsIt/macsweep"
+  desc "Native system cleaner"
+  homepage "https://macsweep.dev/"
 
   depends_on formula: "vincentshipsit/tap/macsweep"
   depends_on macos: :tahoe
