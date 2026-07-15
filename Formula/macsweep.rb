@@ -22,8 +22,8 @@
 class Macsweep < Formula
   desc "CLI-first macOS system cleaner (scan, clean, maintenance, malware, brew)"
   homepage "https://macsweep.dev/"
-  url "https://github.com/VincentShipsIt/macsweep/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "424c44fed8d3b792b90716bd51211b831ee3201353f187a4ebfd534d7cf72890"
+  url "https://github.com/VincentShipsIt/macsweep/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "58571ac9f5d406c115cbdde99354055109c5d0c31cb7510a12e4794d1b3cc8fb"
   license "MIT"
   head "https://github.com/VincentShipsIt/macsweep.git", branch: "master"
 
