@@ -1,9 +1,9 @@
 cask "macsweep" do
-  version "1.1.2"
-  sha256 "4a7a25509d988d5461065f1a8db9d35f557ce70ae6bb1fb9fe27f6572ce5e0f8"
+  version "1.1.3"
+  sha256 "9d53a52b5d8e1669d173edc45448c32ef88bb879b71f461af1e0903e391ce29e"
 
-  url "https://github.com/VincentShipsIt/macsweep/releases/download/v#{version}/macsweep-v#{version}-macos.zip",
-      verified: "github.com/VincentShipsIt/macsweep/"
+  url "https://github.com/VincentShipsIt/macsweep.dev/releases/download/v#{version}/macsweep-v#{version}-macos.zip",
+      verified: "github.com/VincentShipsIt/macsweep.dev/"
   name "MacSweep"
   desc "Native system cleaner"
   homepage "https://macsweep.dev/"
