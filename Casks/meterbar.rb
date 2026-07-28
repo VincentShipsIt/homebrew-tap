@@ -1,6 +1,6 @@
 cask "meterbar" do
-  version "1.8.1"
-  sha256 "6cf212207ae6f7656180023a227c7802aa4ceaceabe92cbe3dbea46019134716"
+  version "1.8.2"
+  sha256 "4db457cb742f36a2528068931366a4d6524f94e6ad7f3fcfaf3c0a5e227d46b8"
 
   url "https://github.com/VincentShipsIt/meterbar.dev/releases/download/v#{version}/MeterBar-v#{version}.zip"
   name "MeterBar"
