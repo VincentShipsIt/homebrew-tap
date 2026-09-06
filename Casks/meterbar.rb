@@ -17,11 +17,11 @@ cask "meterbar" do
   app "MeterBar.app"
   binary "#{appdir}/MeterBar.app/Contents/Helpers/meterbar", target: "meterbar"
 
-  postflight do
+  postflight_steps do
     # Remove quarantine for an ad-hoc-signed, unnotarized app.
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/MeterBar.app"],
-                   sudo: false
+    run "/usr/bin/xattr",
+        args: ["-cr", "{{appdir}}/MeterBar.app"],
+        sudo: false
   end
 
   zap trash: [
