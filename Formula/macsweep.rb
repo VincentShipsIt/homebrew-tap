@@ -41,8 +41,8 @@ class Macsweep < Formula
   end
 
   test do
-    # `macsweep version` prints "macsweep <semver>" to stdout and exits 0.
+    # `macsweep version` prints "macsweep.dev <semver>" to stdout and exits 0.
     output = shell_output("#{bin}/macsweep version")
-    assert_match(/^macsweep \d+\.\d+\.\d+$/, output)
+    assert_match(/^macsweep\.dev \d+\.\d+\.\d+$/, output)
   end
 end
