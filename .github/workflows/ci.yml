@@ -11,10 +11,12 @@ on:
   push:
     paths:
       - "Formula/**"
+      - "Casks/**"
       - ".github/workflows/**"
   pull_request:
     paths:
       - "Formula/**"
+      - "Casks/**"
       - ".github/workflows/**"
   workflow_dispatch:
 
@@ -50,8 +52,10 @@ jobs:
           fi
 
       # Ruby syntax check — cheap guard against a malformed formula.
-      - name: Formula syntax
-        run: ruby -c Formula/macsweep.rb
+      - name: Formula and cask syntax
+        run: |
+          ruby -c Formula/macsweep.rb
+          ruby -c Casks/macsweep.rb
 
       # Load the formula the way Homebrew does. `brew install`/`audit` reject a
       # formula referenced by a bare path ("requires formulae to be in a tap"), so
